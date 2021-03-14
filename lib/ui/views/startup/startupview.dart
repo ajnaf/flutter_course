@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/ui/views/startup/startup_viewmodel.dart';
+import 'package:flutter_course/ui/widgets/startup_button.dart';
 import 'package:stacked/stacked.dart';
 
 class StartupView extends StatelessWidget {
@@ -9,7 +10,28 @@ class StartupView extends StatelessWidget {
         viewModelBuilder: () => StartupViewModel(),
         builder: (context, model, child) => Scaffold(
               body: Center(
-                child: InkWell(onTap: model.nextPage, child: Text('start')),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    StartupButton(
+                      title: 'next page',
+                      onTap: model.navigate,
+                    ),
+                    StartupButton(
+                      title: 'show dialog',
+                      onTap: model.showDialog,
+                    ),
+                    StartupButton(
+                      title: 'show snackbar',
+                      onTap: model.showSnackbar,
+                    ),
+                    StartupButton(
+                      title: 'show bottom sheet',
+                      onTap: model.bottomSheet,
+                    ),
+                  ],
+                ),
               ),
             ));
   }

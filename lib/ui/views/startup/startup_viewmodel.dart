@@ -6,9 +6,27 @@ import 'package:stacked_services/stacked_services.dart';
 
 @lazySingleton
 class StartupViewModel extends BaseViewModel {
-  final _navigationService = locator<NavigationService>();
-  nextPage() {
-    _navigationService.navigateTo(Routes.homePage,
-        arguments: HomePageArguments(titlePage: 'fdsfds'));
+  final _dialogService = locator<DialogService>();
+  final _snackbarService = locator<SnackbarService>();
+  final _navService = locator<NavigationService>();
+  final _bottomSheet = locator<BottomSheetService>();
+
+  void showDialog() {
+    _dialogService.showDialog(
+        title: 'confirmation title',
+        description: 'are you sure you want to confirm ?');
+  }
+
+  void showSnackbar() {
+    _snackbarService.showSnackbar(message: 'this is a snackbar');
+  }
+
+  void bottomSheet() {
+    _bottomSheet.showBottomSheet(title: 'this is a bottom sheet');
+  }
+
+  void navigate() {
+    _navService.navigateTo(Routes.homePage,
+        arguments: HomePageArguments(titlePage: 'home page title'));
   }
 }

@@ -14,41 +14,53 @@ class HomeViewModel extends BaseViewModel {
 
   initialise() {
     data = [
-      HomeItem(icon: Icons.ac_unit_outlined, title: 'ssss', color: Colors.red),
-      HomeItem(icon: Icons.title_rounded, title: 'aaaa', color: Colors.blue),
-      HomeItem(icon: Icons.toc_outlined, title: 'asfs', color: Colors.yellow),
-      HomeItem(icon: Icons.toggle_off, title: 'ggf', color: Colors.green),
       HomeItem(
-        icon: Icons.toc_sharp,
-        title: 'dsfd',
-      ),
+          icon: Icons.ac_unit_outlined,
+          title: 'ssss',
+          color: Colors.red,
+          route: Routes.calculateView),
       HomeItem(
-        icon: Icons.toc_sharp,
-        title: 'dsfd',
-      ),
+          icon: Icons.title_rounded,
+          title: 'aaaa',
+          color: Colors.blue,
+          route: Routes.calculateView),
       HomeItem(
-        icon: Icons.toc_sharp,
-        title: 'dsfd',
-      ),
+          icon: Icons.toc_outlined,
+          title: 'asfs',
+          color: Colors.yellow,
+          route: Routes.calculateView),
       HomeItem(
-        icon: Icons.toc_sharp,
-        title: 'dsfd',
-      ),
-      HomeItem(icon: Icons.ac_unit_outlined, title: 'gfgf', color: Colors.red),
+          icon: Icons.toggle_off,
+          title: 'ggf',
+          color: Colors.green,
+          route: Routes.calculateView),
+      HomeItem(
+          icon: Icons.toc_sharp, title: 'dsfd', route: Routes.calculateView),
+      HomeItem(
+          icon: Icons.toc_sharp, title: 'dsfd', route: Routes.calculateView),
+      HomeItem(
+          icon: Icons.toc_sharp, title: 'dsfd', route: Routes.calculateView),
+      HomeItem(
+          icon: Icons.toc_sharp, title: 'dsfd', route: Routes.calculateView),
+      HomeItem(
+          icon: Icons.ac_unit_outlined,
+          title: 'gfgf',
+          color: Colors.red,
+          route: Routes.calculateView),
     ];
   }
 
   void onPressed(HomeItem homeItem) {
     text = homeItem.title;
     print(homeItem.title);
-    nextPage();
+    nextPage(homeItem.route);
     notifyListeners();
   }
 
   final _navigationService = locator<NavigationService>();
-  nextPage() {
+  nextPage(String route) {
     _navigationService.navigateTo(
-      Routes.accountView,
+      route,
     );
   }
 }
