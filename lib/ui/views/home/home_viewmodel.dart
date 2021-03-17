@@ -16,14 +16,19 @@ class HomeViewModel extends BaseViewModel {
     data = [
       HomeItem(
           icon: Icons.ac_unit_outlined,
-          title: 'ssss',
+          title: 'المدن',
           color: Colors.red,
-          route: Routes.calculateView),
+          route: Routes.placesView),
+      HomeItem(
+          icon: Icons.ac_unit_outlined,
+          title: 'المدن المحفوظة',
+          color: Colors.red,
+          route: Routes.savedPlacesView),
       HomeItem(
           icon: Icons.title_rounded,
           title: 'aaaa',
           color: Colors.blue,
-          route: Routes.calculateView),
+          route: Routes.accountView),
       HomeItem(
           icon: Icons.toc_outlined,
           title: 'asfs',

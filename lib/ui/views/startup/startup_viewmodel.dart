@@ -1,5 +1,6 @@
 import 'package:flutter_course/app/app.router.dart';
 import 'package:flutter_course/app/locator.dart';
+import 'package:flutter_course/services/local_storage_service.dart';
 import 'package:injectable/injectable.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -10,6 +11,10 @@ class StartupViewModel extends BaseViewModel {
   final _snackbarService = locator<SnackbarService>();
   final _navService = locator<NavigationService>();
   final _bottomSheet = locator<BottomSheetService>();
+  final _localStorageService = locator<LocalStorageService>();
+  init() async {
+    await _localStorageService.initialize();
+  }
 
   void showDialog() {
     _dialogService.showDialog(

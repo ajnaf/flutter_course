@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/ui/views/calculate/calculate_viewmodel.dart';
-import 'package:flutter_course/ui/views/startup/startup_viewmodel.dart';
+import 'package:flutter_course/ui/views/main_views/calculate/calculate_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class CalculateView extends StatelessWidget {

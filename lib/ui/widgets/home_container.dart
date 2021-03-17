@@ -11,8 +11,8 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 150,
+      height: 230,
+      width: 175,
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(

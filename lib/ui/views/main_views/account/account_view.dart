@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/ui/views/account/account_viewmodel.dart';
+import 'package:flutter_course/ui/views/main_views/account/account_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class AccountView extends StatelessWidget {
