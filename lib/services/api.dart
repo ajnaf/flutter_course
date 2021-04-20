@@ -10,7 +10,7 @@ import 'package:stacked_services/stacked_services.dart';
 
 @lazySingleton
 class ApiService {
-  String _baseUrl = 'https://gecol-api.herokuapp.com/';
+  String _baseUrl = '';
 
   final _dialogService = locator<DialogService>();
   final _snackbarService = locator<SnackbarService>();
